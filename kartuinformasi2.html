@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kartu Fakta Menarik — </title>
+  <style>
+    .content {
+        background-image: url(bintang.jpg);
+        width: 500px;
+        height: 500px;
+        padding: 45px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+
+      .factImage {
+        height: 500;
+        width: 500;
+      }
+
+      .card-fakta {
+        max-width: 700px;
+        height: 500;
+        width: 500;
+        margin: auto;
+        background-image: url('galaxygerak.gif');;
+        padding: 30px;
+        font-family: Arial, sans-serif;
+        border-radius: 30px;
+        transition: opacity 0.5s ease;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      }
+
+
+      h1 {
+        color: #00796b;
+        margin-bottom: 20px;
+      }
+
+      .search-box {
+        margin-bottom: 20px;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        width: 70%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .project {
+        margin: 30px 0;
+        padding: 20px;
+        background: #f9f9f9;
+        border-left: 5px solid #4db6ac;
+        text-align: left;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .project img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin: 10px 0;
+      }
+
+      .facts-list{
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 16px;
+        background-color: rgb(94, 29, 94);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: opacity 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
+      }
+
+      
+
+    @font-face {
+        font-family: "d";
+        src: url(KittyRawr-PersonalUse.ttf);
+    }
+
+    li{font-family: ab;
+        color: white;}
+
+    p{font-family: c;
+        color: white;}
+
+    @font-face {
+        font-family: "d";
+        src: url(Pixel.ttf);
+    }
+
+    h2{font-family: d;
+        color:paleturquoise;}
+
+    @font-face {
+        font-family: "c";
+        src: url(hellowicked.otf);
+    }
+    .fade-out{
+        opacity: 0;
+    }
+
+  </style>
+</head>
+<body>
+<center>
+  <div class="card-fakta">
+    <img class="factImage" id="factImage" src="galaxy.jpg" alt="solar system" />
+    <div class="content">
+      <h2>Fakta Menarik tentang luar angkasa</h2>
+      <p class="subtitle">Tahukah kamu fakta-fakta unik ini?</p>
+
+
+      <ul class="facts-list" id="factList">
+        <li>Mars memiliki gunung berapi tertinggi yaitu Olympus Mons, gunung berapi tertinggi di tata surya, yang tingginya tiga kali Gunung Everest.</li>
+        <li>Satu hari di Venus lebih panjang daripada satu tahunnya, membutuhkan 243 hari Bumi untuk berotasi satu kali dan hanya 225 hari Bumi untuk mengorbit matahari.</li>
+        <li>Hujan Neptunus terbuat dari berlian: Kondisi ekstrem di Neptunus menyebabkan karbon terbentuk menjadi berlian, yang kemudian turun melalui atmosfer planet.</li>
+        <li>Kita tidak bisa berdiri di Planet Saturnus seperti kita berdiri di Bumi, Bumi memiliki permukaan yang padat sehingga kita bisa berdiri di atasnya, sedangkan Saturnus tidak.</li>
+      </ul>
+
+
+      <button class="btn-next" id="nextFact">🔁 Fakta Selanjutnya</button>
+
+
+      <div class="card-footer">© 2025 | Fakta Teknologi • Informatika SMP</div>
+    </div>
+  </div>
+
+
+  <script>
+    const factData = [
+      { 
+        image: "genshin.jpg",
+        facts: [
+          "Noelle adalah salah satu dari sedikit karakter yang usianya sudah dipastikan dan telah menyatakan bahwa dia belum cukup umur untuk minum alkohol",
+          "Qiqi adalah salah satu karakter terpendek dalam permainan, bahkan lebih pendek dari mint (tanaman)",
+          "Di antara wilayah yang sudah terbuka, Sumeru adalah yang terluas dan memiliki jangkauan terbesar. Wilayah ini terbagi menjadi dua bagian yang sangat berbeda, yaitu Hutan Hujan dan Padang Pasir, yang keduanya memiliki latar belakang kisah tersendiri.",
+          "Zhongli adalah karakter tertua. Karakter tertua dalam game adalah Zhongli, sang Geo Archon yang berusia lebih dari 6.000 tahun. Usianya terkait erat dengan sejarah Liyue itu sendiri."
+        ]
+      },
+      {
+        image: "wuwa.jpg",
+        facts: [
+          "Charlotta adalah karakter terpendek di wuthering waves",
+          "Jian merupakan karakter limited yang sangat kuat dan dianggap sebagai best DPS (damage per second) karena kemampuannya untuk membersihkan banyak musuh dengan mudah.",
+          "fleurdelys adalah karakter tertinggi dalam wuthering waves",
+          "Sanhua meskipun bukan karakter bintang 5, Sanhua dikenal sebagai salah satu support terbaik yang diberikan gratis. Skill Outro-nya bisa meningkatkan damage serangan dasar karakter berikutnya, menjadikannya sangat efektif dalam tim. ",
+        ]
+      },
+      {
+        image: "boboiboy.jpg",
+        facts: [
+          "Boboiboy halilintar takut balon,mungkin banyak yang mengira BoBoiBoy adalah sosok superhero yang pemberani, namun ternyata BoBoiBoy itu takut dengan balon, Suara balon pecah yang terus-menerus menyebabkan BoBoiBoy Petir naik tingkat kedua menjadi BoBoiBoy Halilintar.",
+          "Satu tokoh namun beda orang. Jugglenaut Besar pengsisi suaranya adalah Gerald Balang Jackson. Sedangkan ketika kecil, Jugglenaut diisi oleh Haireey Hashnan.",
+          "Bagi kamu yang belum pernah nonton BoBoiBoy mungkin tidak akan menyangka kalau bocah superhero ini ternyata takut pada anjing.BoBoiBoy adalah bocah kelas 5 SD yang memiliki ketakutan seperti bocah pada umumnya.",
+          "BoBoiBoy Angin berubah pertama kali menjadi BoBoiBoy Topan karena memakan biskuit Yaya yang telah diracuni ramuan peningkat emosi Adu Du.",
+        ]
+      },
+      {
+        image: "bulananjing.jpg",
+        facts: [
+          "Permukaan bulan tandus dan berbatu, ditutupi oleh sisa-sisa gunung berapi yang telah mati, kawah, dan dataran lava yang mengera.",
+          "Bulan perlahan menjauh dari Bumi sekitar 3,8 cm per tahun. ",
+          "Gempa bulan (Moonquakes): Bulan mengalami gempa yang disebabkan oleh tarikan gravitasi Bumi dan kemungkinan aktivitas geologis lainnya di dalam bulan.",
+          "erat benda di bulan hanya sekitar 1/6 dari beratnya di Bumi, memungkinkan astronot untuk melompat lebih tinggi. ",
+        ]
+      }
+    ];
+
+
+    const factList = document.getElementById("factList");
+    const factImage = document.getElementById("factImage");
+    const nextBtn = document.getElementById("nextFact");
+
+
+    nextBtn.addEventListener("click", () => {
+      factList.classList.add("fade-out");
+      setTimeout(() => {
+        const randomFact = factData[Math.floor(Math.random() * factData.length)];
+        factImage.style.opacity = 0;
+
+
+        setTimeout(() => {
+          factImage.src = randomFact.image;
+          factImage.style.opacity = 1;
+        }, 400);
+
+
+        factList.innerHTML = randomFact.facts.map(f => `<li>${f}</li>`).join("");
+        factList.classList.remove("fade-out");
+      }, 500);
+    });
+  </script>
+</center>
+</body>
+</html>
+
+
